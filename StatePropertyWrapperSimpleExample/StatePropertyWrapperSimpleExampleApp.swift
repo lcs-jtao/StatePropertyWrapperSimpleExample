@@ -11,7 +11,9 @@ import SwiftUI
 struct StatePropertyWrapperSimpleExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            CircleView()
+            NavigationView {
+                CircleView()
+            }
         }
     }
 }
