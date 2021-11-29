@@ -12,7 +12,7 @@ struct StatePropertyWrapperSimpleExampleApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                CircleView()
+                LandingPageView()
             }
         }
     }

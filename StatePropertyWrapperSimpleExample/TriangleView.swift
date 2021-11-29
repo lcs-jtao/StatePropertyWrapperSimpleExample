@@ -1,5 +1,5 @@
 //
-//  CircleView.swift
+//  TriangleView.swift
 //  StatePropertyWrapperSimpleExample
 //
 //  Created by Joyce Tao on 2021-11-29.
@@ -7,32 +7,25 @@
 
 import SwiftUI
 
-struct CircleView: View {
-    
+struct TriangleView: View {
     // MARK: Stored properties
-    // @State is a "property wrapper"
-    // "radius" is still just a property of the structure
-    // The property wrapper alerts SwiftUI to the fact that we want change to this property to show in the UI
-    @State var radius: Double = 10.0
+    @State var height: Double = 10.0
+    @State var base: Double = 10.0
     
     // MARK: Computed properties
     var area: Double {
-        return Double.pi * radius * radius
+        return (height * base) / 2
     }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            
-            // Input
-            Text("Radius")
+            // Height input
+            Text("Height:")
                 .bold()
-            
-            // The syntax of $ says to use the property, radius, and BIND it to this control
-            // This means when the control changes, the property's value changes
-            Slider(value: $radius,
+            Slider(value: $height,
                    in: 0.0...100.0,
                    label: {
-                Text("Radius")
+                Text("Height")
             },
                    minimumValueLabel: {
                 Text("0.0")
@@ -41,21 +34,36 @@ struct CircleView: View {
                 Text("100.0")
             })
             
-            // Output
+            // Base input
+            Text("Base:")
+                .bold()
+            Slider(value: $base,
+                   in: 0.0...100.0,
+                   label: {
+                Text("Height")
+            },
+                   minimumValueLabel: {
+                Text("0.0")
+            },
+                   maximumValueLabel: {
+                Text("100.0")
+            })
+            
+            // Area output
             Text("Area:")
                 .bold()
             Text("\(area) square units")
             Spacer()
         }
         .padding()
-        .navigationTitle("Circle")
+        .navigationTitle("Triangle")
     }
 }
 
-struct CircleView_Previews: PreviewProvider {
+struct TriangleView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CircleView()
+            TriangleView()
         }
     }
 }
