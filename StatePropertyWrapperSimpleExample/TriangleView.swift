@@ -40,7 +40,7 @@ struct TriangleView: View {
             Slider(value: $base,
                    in: 0.0...100.0,
                    label: {
-                Text("Height")
+                Text("Base")
             },
                    minimumValueLabel: {
                 Text("0.0")

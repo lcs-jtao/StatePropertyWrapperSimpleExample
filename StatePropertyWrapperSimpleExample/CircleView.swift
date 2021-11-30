@@ -24,7 +24,7 @@ struct CircleView: View {
         VStack(alignment: .leading, spacing: 20) {
             
             // Input
-            Text("Radius")
+            Text("Radius:")
                 .bold()
             
             Group {
