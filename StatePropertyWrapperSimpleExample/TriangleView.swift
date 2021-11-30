@@ -22,37 +22,61 @@ struct TriangleView: View {
             // Height input
             Text("Height:")
                 .bold()
-            Slider(value: $height,
-                   in: 0.0...100.0,
-                   label: {
-                Text("Height")
-            },
-                   minimumValueLabel: {
-                Text("0.0")
-            },
-                   maximumValueLabel: {
-                Text("100.0")
-            })
+            
+            Group {
+                HStack {
+                    Spacer()
+                    Text("\(String(format: "%.2f", height))")
+                        .font(.title2)
+                        .bold()
+                    Spacer()
+                }
+                
+                Slider(value: $height,
+                                   in: 0.0...100.0,
+                                   label: {
+                                Text("Height")
+                            },
+                                   minimumValueLabel: {
+                                Text("0.0")
+                            },
+                                   maximumValueLabel: {
+                                Text("100.0")
+                            })
+            }
+            
             
             // Base input
             Text("Base:")
                 .bold()
-            Slider(value: $base,
-                   in: 0.0...100.0,
-                   label: {
-                Text("Base")
-            },
-                   minimumValueLabel: {
-                Text("0.0")
-            },
-                   maximumValueLabel: {
-                Text("100.0")
-            })
+            
+            Group {
+                HStack {
+                    Spacer()
+                    Text("\(String(format: "%.2f", base))")
+                        .font(.title2)
+                        .bold()
+                    Spacer()
+                }
+                
+                Slider(value: $base,
+                                   in: 0.0...100.0,
+                                   label: {
+                                Text("Base")
+                            },
+                                   minimumValueLabel: {
+                                Text("0.0")
+                            },
+                                   maximumValueLabel: {
+                                Text("100.0")
+                            })
+            }
+            
             
             // Area output
             Text("Area:")
                 .bold()
-            Text("\(area) square units")
+            Text("\(String(format: "%.1f", area)) square units")
             Spacer()
         }
         .padding()
